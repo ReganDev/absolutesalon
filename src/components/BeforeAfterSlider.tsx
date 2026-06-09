@@ -11,7 +11,7 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
   const [pos, setPos] = useState(50)
   const dragging = useRef(false)
   const containerRef = useRef<HTMLDivElement>(null)
-
+  //test
   const updatePos = useCallback((clientX: number) => {
     if (!containerRef.current) return
     const rect = containerRef.current.getBoundingClientRect()
@@ -21,7 +21,7 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
 
   const onMouseDown = () => { dragging.current = true }
   const onMouseMove = (e: React.MouseEvent) => { if (dragging.current) updatePos(e.clientX) }
-  const onMouseUp   = () => { dragging.current = false }
+  const onMouseUp = () => { dragging.current = false }
   const onTouchMove = (e: React.TouchEvent) => { updatePos(e.touches[0].clientX) }
 
   return (
