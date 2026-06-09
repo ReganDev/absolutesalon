@@ -109,7 +109,7 @@ export default function Gallery() {
           <p style={{ marginBottom: '2rem', fontFamily: 'var(--font-elegant)', fontStyle: 'italic', fontSize: '1.1rem' }}>
             Let us help you look and feel absolutely fabulous.
           </p>
-          <a href="https://wa.me/447700000000" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/447518500599" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
             Book Now on WhatsApp
           </a>
         </div>

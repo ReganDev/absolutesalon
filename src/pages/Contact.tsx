@@ -10,17 +10,17 @@ interface FormState {
 }
 
 const services = [
-  'Cut & Blow Dry',
+  'Styling',
+  'Cutting',
   'Colour & Highlights',
-  'Bridal Hair',
-  'Keratin Treatment',
-  'Hair Extensions',
-  'Lash Extensions',
-  'Brow Design',
-  'Manicure / Pedicure',
-  'Facial Treatment',
+  "Men's Cut",
+  "Junior's Hair",
+  'Hands',
+  'Feet',
   'Waxing',
-  'Make-Up',
+  'Spray Tan',
+  'Eye Treatments',
+  'Facials',
   'Other',
 ]
 
@@ -52,7 +52,7 @@ export default function Contact() {
           <p className="eyebrow gold-text">Get in Touch</p>
           <h1>Contact Us</h1>
           <Divider />
-          <p className="page-hero-sub">We'd love to hear from you — let's make you feel fabulous</p>
+          <p className="page-hero-sub">We'd love to hear from you — let us make you feel fabulous</p>
         </div>
       </section>
 
@@ -101,7 +101,7 @@ export default function Contact() {
                     <label htmlFor="phone">Phone Number</label>
                     <input
                       id="phone" name="phone" type="tel"
-                      placeholder="+44 7700 000000"
+                      placeholder="07518 500 599"
                       value={form.phone}
                       onChange={handleChange}
                     />
@@ -155,21 +155,21 @@ export default function Contact() {
             <div className="contact-card">
               <h3>Get in Touch</h3>
               <div className="contact-links">
-                <a href="tel:+447700000000" className="contact-link-row">
+                <a href="tel:+447518500599" className="contact-link-row">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
                   </svg>
-                  +44 7700 000000
+                  07518 500 599
                 </a>
-                <a href="mailto:hello@absolutelyfabuloushairandbeauty.com" className="contact-link-row">
+                <a href="mailto:abfabhairandbeauty@gmail.com" className="contact-link-row">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                     <polyline points="22,6 12,13 2,6"/>
                   </svg>
-                  hello@absolutelyfabulous…
+                  abfabhairandbeauty@gmail.com
                 </a>
                 <a
-                  href="https://wa.me/447700000000"
+                  href="https://wa.me/447518500599"
                   className="btn btn-whatsapp"
                   target="_blank"
                   rel="noopener noreferrer"

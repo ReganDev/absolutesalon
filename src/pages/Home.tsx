@@ -2,22 +2,110 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import './Home.css'
 
-const hairServices = [
-  { name: 'Cut & Blow Dry', desc: 'Precision cuts tailored to your face shape and lifestyle.', price: 'from £35' },
-  { name: 'Colour & Highlights', desc: 'Full colour, balayage, ombré, and foil highlights.', price: 'from £65' },
-  { name: 'Bridal Hair', desc: 'Stunning up-dos and bridal styling for your special day.', price: 'from £95' },
-  { name: 'Keratin Treatment', desc: 'Smooth, frizz-free results that last up to 3 months.', price: 'from £120' },
-  { name: 'Hair Extensions', desc: 'Tape, nano, and micro-ring extensions for length and volume.', price: 'from £150' },
-  { name: 'Toning & Gloss', desc: 'Refresh your colour and restore shine between appointments.', price: 'from £30' },
+const hairServiceCategories = [
+  {
+    category: 'Styling',
+    services: [
+      { name: 'Blow Dry', price: '£20' },
+      { name: 'Curling & Waves', price: '£25' },
+      { name: 'Roller Set', price: '£25' },
+      { name: 'Perming', price: '£50' },
+    ],
+  },
+  {
+    category: 'Cutting',
+    services: [
+      { name: 'Dry Cut', price: '£20' },
+      { name: 'Wash & Cut', price: '£25' },
+      { name: 'Wash Cut & Blowdry', price: '£30' },
+      { name: 'Re-Style', price: 'POA' },
+    ],
+  },
+  {
+    category: 'Colour & Highlights',
+    services: [
+      { name: 'Toner', price: '£10' },
+      { name: 'Root Tint', price: '£30' },
+      { name: 'Glossing', price: '£30' },
+      { name: 'Full Head Colour', price: '£40' },
+      { name: 'Cap', price: '£50' },
+      { name: '½ Section', price: '£45' },
+      { name: 'Half Head', price: '£55' },
+      { name: 'Full Head', price: '£65' },
+      { name: 'Tint & Foils', price: '£80' },
+      { name: 'Balayage', price: 'POA' },
+    ],
+  },
+  {
+    category: "Men's Cut",
+    services: [
+      { name: 'Clipper Cut', price: '£12' },
+      { name: 'Wash & Cut', price: '£18' },
+    ],
+  },
+  {
+    category: "Junior's Hair",
+    services: [
+      { name: '6–10 Years Cut', price: '£10' },
+      { name: '10–15 Years Cut', price: '£15' },
+    ],
+  },
 ]
 
-const beautyServices = [
-  { name: 'Lash Extensions', desc: 'Classic, hybrid, and volume lash sets to open up your eyes.', price: 'from £45' },
-  { name: 'Brow Design', desc: 'Shaping, tinting, lamination, and HD brows.', price: 'from £18' },
-  { name: 'Manicure & Pedicure', desc: 'Classic, gel, and luxury treatments for hands and feet.', price: 'from £22' },
-  { name: 'Facial Treatments', desc: 'Bespoke facials for deep cleanse, glow, and anti-ageing.', price: 'from £55' },
-  { name: 'Waxing', desc: 'Full body waxing with professional comfort wax.', price: 'from £12' },
-  { name: 'Make-Up', desc: 'Occasion, bridal, and photoshoot make-up artistry.', price: 'from £50' },
+const beautyServiceCategories = [
+  {
+    category: 'Hands',
+    services: [
+      { name: 'File & Varnish', price: '£20' },
+      { name: 'Gel Polish', price: '£35' },
+    ],
+  },
+  {
+    category: 'Feet',
+    services: [
+      { name: 'File & Varnish', price: '£25' },
+      { name: 'Gel Polish', price: '£40' },
+    ],
+  },
+  {
+    category: 'Waxing',
+    services: [
+      { name: 'Eyebrow Tidy', price: '£10' },
+      { name: 'Lip', price: '£10' },
+      { name: 'Chin', price: '£10' },
+      { name: 'Eyebrow, Lip & Chin', price: '£25' },
+      { name: 'Half Arm', price: '£13' },
+      { name: 'Underarm', price: '£18' },
+      { name: 'Half Leg', price: '£25' },
+      { name: 'Full Leg', price: '£35' },
+      { name: 'Bikini', price: '£20' },
+    ],
+  },
+  {
+    category: 'Spray Tans',
+    services: [
+      { name: 'Full Body', price: '£25' },
+      { name: 'Half Body', price: '£15' },
+      { name: 'Express Rapid', price: '£28' },
+    ],
+  },
+  {
+    category: 'Eye Treatments',
+    services: [
+      { name: 'Brow Tint', price: '£15' },
+      { name: 'Lash Tint', price: '£20' },
+      { name: 'Brow & Lash Tint', price: '£30' },
+    ],
+  },
+  {
+    category: 'Facials',
+    services: [
+      { name: 'Mini', price: '£25' },
+      { name: 'Acne Care', price: '£40' },
+      { name: 'Anti-Ageing', price: '£45' },
+      { name: 'Luxury', price: '£50' },
+    ],
+  },
 ]
 
 const testimonials = [
@@ -33,7 +121,7 @@ const testimonials = [
   },
   {
     name: 'Emma R.',
-    text: "Lash extensions are incredible – so natural yet full. Quick appointment, lovely staff, and the salon is gorgeous.",
+    text: "Lash extensions are incredible – so natural yet full. Quick appointment, lovely staff, and absolutely love the results.",
     stars: 5,
   },
 ]
@@ -59,7 +147,7 @@ export default function Home() {
         <div className="hero-overlay" />
         <div className="hero-content">
           <img src={logo} alt="Absolutely Fabulous Hair & Beauty" className="hero-logo" />
-          <p className="hero-tagline">Where beauty meets elegance</p>
+          <p className="hero-tagline">Because You Deserve to Feel Fabulous</p>
           <div className="hero-actions">
             <a href="#booking" className="btn btn-primary">Book an Appointment</a>
             <Link to="/gallery" className="btn btn-outline hero-btn-outline">View Gallery</Link>
@@ -98,20 +186,24 @@ export default function Home() {
           </div>
           <div className="about-text">
             <p className="about-eyebrow gold-text">Our Story</p>
-            <h2>A sanctuary of style<br /><em>& beauty</em></h2>
+            <h2>You Deserve To Feel<br /><em>Absolutely Fabulous</em></h2>
             <Divider />
             <p>
-              Absolutely Fabulous Hair & Beauty is a family-run salon established in
-              2026, proudly serving the Sevenoaks area of Kent. From the very beginning,
-              we've built our reputation on one simple belief — every client deserves
-              to leave feeling refreshed, confident, and completely fabulous.
+              Highly Qualified Senior Hairdresser's &amp; Beauty Therapists; Providing Professional Services in the Comfort of Your Home.
             </p>
             <p>
-              From a quick trim to a full bridal transformation, we treat every
-              appointment as an opportunity to make you feel your very best.
+              Take the hassle out of going to the salon — Let the salon come to you.
             </p>
+            <div className="about-badges">
+              <span className="about-badge">35+ Years Experience</span>
+              <span className="about-badge">NVQ Qualified</span>
+              <span className="about-badge">Fully Insured</span>
+              <span className="about-badge">Salon Trained</span>
+              <span className="about-badge">Head to Toe Transformation</span>
+              <span className="about-badge">No Hassle, No Stress!</span>
+            </div>
             <a href="#booking" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
-              Book Your Visit
+              Book Your Appointment
             </a>
           </div>
         </div>
@@ -127,12 +219,18 @@ export default function Home() {
             <p>Expert hair care crafted around you</p>
           </div>
           <div className="services-grid">
-            {hairServices.map(s => (
-              <div key={s.name} className="service-card">
+            {hairServiceCategories.map(cat => (
+              <div key={cat.category} className="service-card">
                 <div className="service-card-inner">
-                  <h3>{s.name}</h3>
-                  <p>{s.desc}</p>
-                  <span className="service-price gold-text">{s.price}</span>
+                  <h3>{cat.category}</h3>
+                  <ul className="service-list">
+                    {cat.services.map(s => (
+                      <li key={s.name} className="service-list-item">
+                        <span>{s.name}</span>
+                        <span className="service-price gold-text">{s.price}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -147,15 +245,21 @@ export default function Home() {
             <p className="eyebrow gold-text">Indulge Yourself</p>
             <h2>Beauty Services</h2>
             <Divider />
-            <p>Treatments that nourish, enhance, and delight</p>
+            <p>Because you're worth it</p>
           </div>
           <div className="services-grid">
-            {beautyServices.map(s => (
-              <div key={s.name} className="service-card service-card--beauty">
+            {beautyServiceCategories.map(cat => (
+              <div key={cat.category} className="service-card service-card--beauty">
                 <div className="service-card-inner">
-                  <h3>{s.name}</h3>
-                  <p>{s.desc}</p>
-                  <span className="service-price gold-text">{s.price}</span>
+                  <h3>{cat.category}</h3>
+                  <ul className="service-list">
+                    {cat.services.map(s => (
+                      <li key={s.name} className="service-list-item">
+                        <span>{s.name}</span>
+                        <span className="service-price gold-text">{s.price}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -219,7 +323,7 @@ export default function Home() {
           <div className="booking-content">
             <div className="booking-options">
               <a
-                href="https://wa.me/447700000000"
+                href="https://wa.me/447518500599"
                 className="btn btn-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -233,7 +337,7 @@ export default function Home() {
               <Link to="/contact" className="btn btn-gold">
                 Send Enquiry
               </Link>
-              <a href="tel:+447700000000" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.5)' }}>
+              <a href="tel:+447518500599" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.5)' }}>
                 Call Us
               </a>
             </div>
