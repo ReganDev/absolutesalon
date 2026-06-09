@@ -1,0 +1,207 @@
+.contact-hero {
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%),
+    var(--gold-pale);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── Form ────────────────────────────── */
+.contact-sub-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+.contact-sub-desc {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.form-group label span { color: var(--pink); }
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--pink-light);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--dark);
+  background: var(--white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--silver); }
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(199,75,123,0.12);
+}
+
+.form-group textarea { resize: vertical; min-height: 130px; }
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237a6070' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-submit { align-self: flex-start; margin-top: 0.5rem; }
+
+/* ── Success ─────────────────────────── */
+.form-success {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--pink-pale);
+  border: 1px solid var(--pink-light);
+  border-radius: var(--radius);
+}
+.form-success-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+.form-success h3 { margin-bottom: 0.5rem; }
+.form-success p  { color: var(--text-light); margin-bottom: 1.5rem; font-family: var(--font-elegant); font-style: italic; }
+
+/* ── Info Panel ──────────────────────── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-card {
+  background: var(--cream);
+  border: 1px solid var(--pink-light);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+}
+
+.contact-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+}
+
+.contact-card p {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.hours-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--text);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--pink-light);
+}
+.hours-list li:last-child { border-bottom: none; }
+.hours-list li span:first-child { font-weight: 700; color: var(--dark); }
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-link-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.contact-link-row:hover { color: var(--pink); }
+.contact-link-row svg { color: var(--pink); flex-shrink: 0; }
+
+.contact-card--gold {
+  background: linear-gradient(135deg, var(--gold-pale), var(--pink-pale));
+  border-color: var(--gold-light);
+}
+
+.contact-card-quote {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text);
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ── Eyebrow ─────────────────────────── */
+.eyebrow {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Responsive ──────────────────────── */
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 560px) {
+  .form-row { grid-template-columns: 1fr; }
+  .form-submit { width: 100%; text-align: center; }
+}
